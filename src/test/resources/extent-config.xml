@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme -->
+        <!-- standard, dark -->
+        <theme>dark</theme>
+    
+        <!-- document encoding -->
+        <!-- defaults to UTF-8 -->
+        <encoding>UTF-8</encoding>
+        
+        <!-- protocol for script and stylesheets -->
+        <!-- defaults to https -->
+        <protocol>https</protocol>
+        
+        <!-- title of the document -->
+        <documentTitle>GO Geta Store </documentTitle>>
+        
+        <!-- report name - displayed at top-nav -->
+        <reportName>GoGetaStore Test Report
+         <![CDATA[
+                <img style="width:16px; margin-left:5px;" src='C:\Users\SANDEEP.CHAUHAN\Downloads\gpLogo-1 (1).png'/>
+            ]]>
+        </reportName>
+        
+        
+        <!-- location of charts in the test view -->
+        <!-- top, bottom -->
+        <testViewChartLocation>bottom</testViewChartLocation>
+      
+        <!-- custom javascript -->
+        <scripts>
+            <![CDATA[
+                $(document).ready(function() {
+                    
+                });
+            ]]>
+        </scripts>
+        
+        <!-- custom styles -->
+        <styles>
+            <![CDATA[
+            .report-name { padding-left: 2px; } span.badge.badge-primary > img { float: 
+      left;height: 2px;margin-left: 2px;margin-top: 1px;width: auto; }
+        ]]>
+        </styles>
+    </configuration>
+</extentreports>
