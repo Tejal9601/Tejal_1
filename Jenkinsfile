@@ -8,6 +8,12 @@ pipeline {
 
     stages {
 
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/Tejal9601/Jen_AutoTriggerP.git'
+            }
+        }
+
         stage('Verify Tools') {
             steps {
                 bat 'java -version'
@@ -29,16 +35,29 @@ pipeline {
     }
 
     post {
+
         always {
+
+            // Publish JUnit XML Results
             junit '**/target/surefire-reports/*.xml'
+
+            // Publish HTML Report
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'target/surefire-reports',
+                reportFiles: 'index.html',
+                reportName: 'Automation HTML Report'
+            ])
         }
 
         success {
-            echo '✅ Tests Passed Successfully!'
+            echo '✅ Automation Tests Passed Successfully!'
         }
 
         failure {
-            echo '❌ Tests Failed!'
+            echo '❌ Automation Tests Failed!'
         }
     }
 }
